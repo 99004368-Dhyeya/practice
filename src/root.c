@@ -57,7 +57,7 @@ int interval_1()
     {
             pos = calculate(count1);
 
-            printf("%d",pos);
+            //printf("%d",pos);
             
             if(pos>0)
             {break;}
