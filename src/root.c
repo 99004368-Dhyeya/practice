@@ -51,8 +51,8 @@ float calculate(float x)
 }
 
 int interval_1()
-{
-    int count1=0,pos=0;
+{   int count1;
+    float pos=0;
     while(1)
     {
             pos = calculate(count1);
@@ -65,9 +65,10 @@ int interval_1()
     }
     return pos;
 }
+
 int interval_2()
-{
-    int neg=0,count2=0;
+{   int count2=0;
+    float neg=0;
     while(1)
     {
             neg = calculate(count2);
@@ -80,20 +81,45 @@ int interval_2()
     return neg;
 }
 
-/*Bisection(int upp_lim,int low_lim)
-{
+float Bisection(float upp_lim,float low_lim)
+{   
+    float x1=0, roots=0,b=0;
+    int itr, max_itr=20 ;
+    for(itr=0;itr<=max_itr;itr++)
+   {
+       x1 = (upp_lim + low_lim)/2;
+       roots = calculate(x1);
 
-    return r_o;
-}*/
+       {    
+           if(roots>0)
+            {
+                upp_lim = x1;
+            }
+            else
+            {
+                low_lim = x1;
+            }
+       }
+
+       if(roots-calculate((upp_lim+low_lim)/2)<=0.01)
+       b = ((upp_lim+low_lim)/2);
+
+       else 
+       continue;
+
+
+   } return b;
+}
 
 float root()
-{   
+{   float r_o;
     accept_func();
+    //float x = calculate(3);
     upp_lim = interval_1();
     low_lim = interval_2();
    
-   //r_o = Bisection(upp_lim,low_lim);
+   r_o = Bisection(upp_lim,low_lim);
 
-    printf("%f\n%f",upp_lim,low_lim);
+    printf("%f",r_o);
 
 }

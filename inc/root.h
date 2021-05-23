@@ -12,5 +12,6 @@ float root();
 
 int interval_1();
 int interval_2();
+float Bisection(float,float);
 
 #endif
