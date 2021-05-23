@@ -14,12 +14,15 @@ src/trigo_calc.c\
 src/trigo.c\
 
 
+TEST_SRC = test.c\
+unity/unity.c\
 # All include folders with header files
 INC	= -Iinc\
 -Iunity\
 
+
 #Library Inlcudes
-INCLUDE_LIBS = 
+#INCLUDE_LIBS = 
 
 ifdef OS
    RM = del /q
@@ -49,6 +52,11 @@ $(PROJECT_NAME):all
 all: 
 	gcc main.c  $(SRC) $(INC) -o $(call FixPath,$(PROJECT_NAME).$(EXEC))
 
+	
+test: $(SRC) $(TEST_SRC)
+	gcc $(TEST_SRC) $(SRC) $(INC) $(INC_T) -lm -o $(TEST_PROJ_NAME).$(EXEC)
+	./$(TEST_PROJ_NAME).$(EXEC)
+
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
 	./$(PROJECT_NAME).$(EXEC)
@@ -56,16 +64,22 @@ run:$(PROJECT_NAME)
 # Document the code using Doxygen
 doc:
 	make -C ./documentation
+	
+coverage: 
+	gcc -fprofile-arcs -ftest-coverage main.c $(SRC) $(INC) -lm -o $(PROJ_NAME).$(EXEC)
+	./$(PROJ_NAME).$(EXEC) < input.txt
+	gcov -a main.c
 
+staticcheck: 
+	cppcheck --enable=all --suppress=missingIncludeSystem main.c $(SRC) inc/anm.h $(INC)
 
-# Remove all the built files, invoke by `make clean`
+memcheck:
+	valgrind ./$(PROJ_NAME).$(EXEC)
+
 clean:
-	$(RM) *.$(EXEC)
-	$(RM) books.bin
-	$(RM) *.gcno
-	$(RM) *.gcov
-	$(RM) *.gcda
-	$(RM) $(BUILD)
+	$(RM) *.$(EXEC) *.gcov *.gcda *.gcno 
+
+analyze: all run test coverage staticcheck memcheck clean
 
 # Create new build folder if not present
 $(BUILD):

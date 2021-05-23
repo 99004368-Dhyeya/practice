@@ -107,7 +107,6 @@ float Bisection(float upp_lim,float low_lim)
        else 
        continue;
 
-
    } return b;
 }
 
