@@ -21,4 +21,7 @@ float calculate(float);
 void trig_input();  //trig functions
 float trig_val(float);
 float ret_val(int,float);
+
+
+
 #endif

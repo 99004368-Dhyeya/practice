@@ -4,6 +4,9 @@
 int num_degree=0;
 int num_coeff[10];
 
+int upp_lim=0;
+int low_lim=0;
+
 void accept_func()
 {
     printf("Enter max degree of variable 'x' in the numerator and denominator\n");
@@ -42,15 +45,55 @@ float calculate(float x)
         //printf("%f\n",num_val);
     }
     
-    num_val=num_val+trig_val(x);
-    return 0; //return value to be checked
+    //num_val=num_val+trig_val(x);
+    return num_val; //return value to be checked
 
 }
 
-float root()
+int interval_1()
 {
+    int count1=0,pos=0;
+    while(1)
+    {
+            pos = calculate(count1);
+
+            printf("%d",pos);
+            
+            if(pos>0)
+            {break;}
+      count1++;
+    }
+    return pos;
+}
+int interval_2()
+{
+    int neg=0,count2=0;
+    while(1)
+    {
+            neg = calculate(count2);
+          
+            if(neg<0)
+            {break;}
+
+            count2--;      
+    }
+    return neg;
+}
+
+/*Bisection(int upp_lim,int low_lim)
+{
+
+    return r_o;
+}*/
+
+float root()
+{   
     accept_func();
-   //Power = power(,);
-    //calculate();
+    upp_lim = interval_1();
+    low_lim = interval_2();
+   
+   //r_o = Bisection(upp_lim,low_lim);
+
+    printf("%f\n%f",upp_lim,low_lim);
 
 }
