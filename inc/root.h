@@ -5,8 +5,8 @@
 #ifndef __Root_H__
 #define __Root_H__
 
-extern int upp_lim;
-extern int low_lim;
+extern float upp_lim;
+extern float low_lim;
 
 float root();
 

@@ -1,11 +1,12 @@
 #include "root.h"
 #include "input.h"
+#include <limits.h>
 
 int num_degree=0;
 int num_coeff[10];
 
-int upp_lim=0;
-int low_lim=0;
+float upp_lim=0;
+float low_lim=0;
 
 void accept_func()
 {
@@ -51,37 +52,48 @@ float calculate(float x)
 }
 
 int interval_1()
-{   int count1;
-    float pos=0;
-    while(1)
-    {
-            pos = calculate(count1);
+{   float i=0;
+    float pos,temp=0;
+    float min = 99999;
 
-            //printf("%d",pos);
+    for(i=-32768;i<=32768;i++)
+    {
+            pos = calculate(i);
+
+            //printf("%f\t",pos);
             
             if(pos>0)
-            {break;}
-      count1++;
+            {
+                if(pos<min)
+                {
+                    min = pos;
+                }
+            }   
     }
-    return pos;
+    //printf("%f",min);
+    return min;
 }
 
 int interval_2()
-{   int count2=0;
-    float neg=0;
-    while(1)
+{   float i=0;
+    float temp=0;
+    float neg=0, max = -99999;
+    for(i=-32768;i<=32768;i++)
     {
-            neg = calculate(count2);
+            neg = calculate(i);
           
             if(neg<0)
-            {break;}
-
-            count2--;      
+            {
+                if(neg>max)
+                {
+                    max = neg;
+                }
+            }             
     }
-    return neg;
+    return max;
 }
 
-float Bisection(float upp_lim,float low_lim)
+/*float Bisection(float upp_lim,float low_lim)
 {   
     float x1=0, roots=0,b=0;
     int itr, max_itr=20 ;
@@ -108,17 +120,17 @@ float Bisection(float upp_lim,float low_lim)
        continue;
 
    } return b;
-}
+}*/
 
 float root()
 {   float r_o;
     accept_func();
-    //float x = calculate(3);
+    
     upp_lim = interval_1();
     low_lim = interval_2();
    
-   r_o = Bisection(upp_lim,low_lim);
+   //r_o = Bisection(upp_lim,low_lim);
 
-    printf("%f",r_o);
+    printf("%f\t %f",upp_lim,low_lim);
 
 }
