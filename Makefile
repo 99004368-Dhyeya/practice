@@ -12,6 +12,16 @@ BUILD = build
 SRC = src/root.c\
 src/trigo_calc.c\
 src/trigo.c\
+src/Bisection.c\
+src/input.c\
+src/Newton_Raphson.c\
+src/choice.c\
+src/function_plot.c\
+src/pbPlots.c\
+src/plot_pointer_function.c\
+src/Points_function_plot.c\
+src/supportLib.c\
+src/testWritePNG.c\
 
 
 TEST_SRC = test.c\

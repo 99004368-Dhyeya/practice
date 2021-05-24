@@ -7,6 +7,8 @@
 
 extern int num_degree;  //root variables
 extern int num_coeff[];
+extern int num_co[];
+
 float trig_val(float);
 
 extern int nu;  //trig_val variables
@@ -14,9 +16,10 @@ extern int ari;
 extern int fun;
 extern char str[];
 
-void accept_functwo();
+void accept_func();
 float power(float, int);
 float calculate(float);
+
 
 void trig_input();  //trig functions
 float trig_val(float);
