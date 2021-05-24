@@ -15,7 +15,8 @@ double NR();
 int interval_1();
 int interval_2();
 double Bisection(float,float);
-double calculate1(float);
+double calculate1(double);
+double power1(double, int);
 int choice();
 
 #endif

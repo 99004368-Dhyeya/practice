@@ -66,7 +66,7 @@ double Algebraic()
    r_o = Bisection(upp_lim,low_lim);
 
     printf("%lf\t %lf\n",upp_lim,low_lim);
-    printf("%lf",r_o);
+    printf("%lf\n",r_o);
     
 
 }
@@ -82,6 +82,6 @@ double Transcedental()
    r_o = Bisection(upp_lim,low_lim);
 
     printf("%lf\t %lf\n",upp_lim,low_lim);
-    printf("%lf",r_o);
+    printf("%lf\n",r_o);
 }
 

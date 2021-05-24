@@ -1,11 +1,14 @@
 #include "input.h"
 #include "root.h"
 #include "plotfunctions.h"
+#include "runtimeMeasure.h"
 
 
 int choice()
 {
 int choice=0;
+startTime();
+
     printf("Enter choice for types of equations:\n");
     printf("Enter 1 for Algebraic Equations:\n");
     printf("Enter 2 for Transcedental Equations:\n");
@@ -26,4 +29,6 @@ int choice=0;
     }
     functionPointer function = calculate;
      function_plot(function);
+     endTime();
+     calculateTime();
 }

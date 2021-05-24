@@ -22,6 +22,9 @@ src/plot_pointer_function.c\
 src/points_function_plot.c\
 src/supportLib.c\
 src/testWritePNG.c\
+src/calculateTime.c\
+src/startTime.c\
+src/endTime.c\
 
 
 TEST_SRC = test.c\
