@@ -54,7 +54,7 @@ float calculate(float x)
 int interval_1()
 {   float i=0;
     float pos,temp=0;
-    float min = 99999;
+    float min = 99999,up=0;
 
     for(i=-32768;i<=32768;i++)
     {
@@ -67,17 +67,19 @@ int interval_1()
                 if(pos<min)
                 {
                     min = pos;
+                    up=i;
                 }
             }   
     }
     //printf("%f",min);
-    return min;
+    return up;
 }
 
 int interval_2()
 {   float i=0;
     float temp=0;
     float neg=0, max = -99999;
+    float low=0;
     for(i=-32768;i<=32768;i++)
     {
             neg = calculate(i);
@@ -87,13 +89,14 @@ int interval_2()
                 if(neg>max)
                 {
                     max = neg;
+                    low=i;
                 }
             }             
     }
-    return max;
+    return low;
 }
 
-/*float Bisection(float upp_lim,float low_lim)
+float Bisection(float upp_lim,float low_lim)
 {   
     float x1=0, roots=0,b=0;
     int itr, max_itr=20 ;
@@ -120,7 +123,7 @@ int interval_2()
        continue;
 
    } return b;
-}*/
+}
 
 float root()
 {   float r_o;
@@ -129,8 +132,9 @@ float root()
     upp_lim = interval_1();
     low_lim = interval_2();
    
-   //r_o = Bisection(upp_lim,low_lim);
+   r_o = Bisection(upp_lim,low_lim);
 
-    printf("%f\t %f",upp_lim,low_lim);
+    printf("%f\t %f\n",upp_lim,low_lim);
+    printf("%f",r_o);
 
 }
