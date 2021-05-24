@@ -17,8 +17,8 @@ extern int fun;
 extern char str[];
 
 void accept_func();
-float power(float, int);
-float calculate(float);
+double power(double, int);
+double calculate(double);
 
 
 void trig_input();  //trig functions

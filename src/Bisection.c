@@ -2,7 +2,7 @@
 #include "input.h"
 #include <limits.h>
 
-float Bisection(float upp_lim,float low_lim)
+double Bisection(float upp_lim,float low_lim)
 {   
     float x1=0, roots=0,b=0;
     int itr, max_itr=20 ;

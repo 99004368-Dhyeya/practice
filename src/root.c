@@ -1,9 +1,10 @@
 #include "root.h"
 #include "input.h"
 #include <limits.h>
+#include "plotfunctions.h"
 
-float upp_lim=0;
-float low_lim=0;
+double upp_lim=0;
+double low_lim=0;
 
 
 
@@ -54,8 +55,8 @@ int interval_2()
 
 
 
-float Algebraic()
-{   float r_o=0;
+double Algebraic()
+{   double r_o=0;
     
     accept_func();
     
@@ -64,14 +65,15 @@ float Algebraic()
    
    r_o = Bisection(upp_lim,low_lim);
 
-    printf("%f\t %f\n",upp_lim,low_lim);
-    printf("%f",r_o);
+    printf("%lf\t %lf\n",upp_lim,low_lim);
+    printf("%lf",r_o);
+    
 
 }
 
-float Transcedental()
+double Transcedental()
 {
-    float r_o=0;
+    double r_o=0;
     accept_func();
     trig_input();
     upp_lim = interval_1();
@@ -79,7 +81,7 @@ float Transcedental()
    
    r_o = Bisection(upp_lim,low_lim);
 
-    printf("%f\t %f\n",upp_lim,low_lim);
-    printf("%f",r_o);
+    printf("%lf\t %lf\n",upp_lim,low_lim);
+    printf("%lf",r_o);
 }
 

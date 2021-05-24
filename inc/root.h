@@ -5,17 +5,17 @@
 #ifndef __Root_H__
 #define __Root_H__
 
-extern float upp_lim;
-extern float low_lim;
+extern double upp_lim;
+extern double low_lim;
 
-float Algebraic();
-float Transcedental();
-float Newton_raphson();
-float NR();
+double Algebraic();
+double Transcedental();
+double Newton_raphson();
+double NR();
 int interval_1();
 int interval_2();
-float Bisection(float,float);
-float calculate1(float);
+double Bisection(float,float);
+double calculate1(float);
 int choice();
 
 #endif

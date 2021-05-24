@@ -22,21 +22,21 @@ void accept_func()
     
 }
 
-float power(float x, int deg)
+double power(double x, int deg)
 {
     if(deg==0)
         return 1;
     else
     {
-        float value=1;
+        double value=1;
         for(int i=1;i<=deg;i++)
         value=value*x;
         return value;
     }
 }
-float calculate(float x)
+double calculate(double x)
 {
-    float num_val=0;
+    double num_val=0;
     for(int i=num_degree;i>=0;i--)
     {
         //printf("%d\n",num_coeff[i]);

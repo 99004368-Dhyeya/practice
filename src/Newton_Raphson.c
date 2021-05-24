@@ -2,14 +2,14 @@
 #include "input.h"
 #include <limits.h>
 
-/*float calulate1(float x)
+double calculate1(float x)
 {   int y = num_degree;
     for(int i=0;i<=num_degree;i++)
     {
         num_co[i] = y * num_coeff[i];
         y--;
     }
-    float num_val=0;
+    double num_val=0;
     num_degree--;
     for(int i=num_degree;i>=0;i--)
     {
@@ -21,8 +21,8 @@
     return num_val;
 }
 
-float NR()
-{   float val=0;
+double NR()
+{   double val=0;
     int i=0,itr=0;
     for(itr=0;itr<=num_degree;itr++)
    {   
@@ -33,12 +33,12 @@ float NR()
    }
    return val;
 }
-float Newton_raphson()
+double Newton_raphson()
 {
-    float r_o=0;
+    double r_o=0;
     accept_func();
-    trig_input();
+    //trig_input();
 
     r_o = NR();
     printf("%f",r_o);
-}*/
+}

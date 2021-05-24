@@ -19,7 +19,7 @@ src/choice.c\
 src/function_plot.c\
 src/pbPlots.c\
 src/plot_pointer_function.c\
-src/Points_function_plot.c\
+src/points_function_plot.c\
 src/supportLib.c\
 src/testWritePNG.c\
 

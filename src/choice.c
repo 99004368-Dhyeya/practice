@@ -1,5 +1,7 @@
 #include "input.h"
 #include "root.h"
+#include "plotfunctions.h"
+
 
 int choice()
 {
@@ -19,7 +21,9 @@ int choice=0;
         Transcedental();
         break;
 
-        //case 3:
-        //Newton_raphson();
+        case 3:
+        Newton_raphson();
     }
+    functionPointer function = calculate;
+     function_plot(function);
 }
