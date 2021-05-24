@@ -26,6 +26,9 @@ startTime();
 
         case 3:
         Newton_raphson();
+
+        case 4:
+        differentiation();
     }
     functionPointer function = calculate;
      function_plot(function);

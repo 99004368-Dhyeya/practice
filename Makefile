@@ -25,7 +25,7 @@ src/testWritePNG.c\
 src/calculateTime.c\
 src/startTime.c\
 src/endTime.c\
-
+src/differentiation.c\
 
 TEST_SRC = test.c\
 unity/unity.c\
@@ -90,7 +90,7 @@ memcheck:
 	valgrind ./$(PROJ_NAME).$(EXEC)
 
 clean:
-	$(RM) *.$(EXEC) *.gcov *.gcda *.gcno 
+	$(RM) *.$(EXEC) *.gcov *.gcda *.gcno *.png
 
 analyze: all run test coverage staticcheck memcheck clean
 
